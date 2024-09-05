@@ -2,6 +2,8 @@
 
 experimentation with formal representations of missing data
 
+This repos starts off with a schema about people. It will be changed to a light subset of MIxS 6.2, with explicit handling of missing values.
+
 ## Website
 
 [https://GenomicsStandardsConsortium.github.io/mixs-missing-value-sandbox](https://GenomicsStandardsConsortium.github.io/mixs-missing-value-sandbox)
