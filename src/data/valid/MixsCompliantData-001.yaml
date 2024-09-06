@@ -11,6 +11,9 @@ mims_soil_data:
     lat_lon: 45.67 45.67
     samp_taxon_id: unicorn [NCBITaxon:999]
     seq_meth: xxx
+    sop:
+      - http://example.com/sop1
+      - http://example.com/sop2
   - depth: "123"
     elev: "123"
     project_name: abc # no primary id?

@@ -1,3 +1,0 @@
-depth	elev	project_name	samp_name	collection_date	env_broad_scale	env_local_scale	env_medium	geo_loc_name	lat_lon	samp_taxon_id	seq_meth
-123	123	abc	abc	2013-03-25T12:42:31+01:00	unicorn [example:999]	unicorn [example:999]	unicorn [example:999]	unicorn: unicorn, unicorn	45.67 45.67	unicorn [NCBITaxon:999]	xxx
-123	123	abc	abc	2013-03-25T12:42:31+01:00	unicorn [example:999]	unicorn [example:999]	unicorn [example:999]	unicorn: unicorn, unicorn	45.67 45.67	unicorn [NCBITaxon:999]	xxx
