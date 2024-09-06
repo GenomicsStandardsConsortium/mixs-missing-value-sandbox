@@ -1,0 +1,25 @@
+mims_soil_data:
+  - depth: "123"
+    elev: "123"
+    project_name: abc
+    samp_name: abc
+    collection_date: '2013-03-25T12:42:31+01:00'
+    env_broad_scale: unicorn [example:999]
+    env_local_scale: unicorn [example:999]
+    env_medium: unicorn [example:999]
+    geo_loc_name: "unicorn: unicorn, unicorn"
+    lat_lon: 45.67 45.67
+    samp_taxon_id: unicorn [NCBITaxon:999]
+    seq_meth: xxx
+  - depth: "123"
+    elev: "123"
+    project_name: abc # no primary id?
+    samp_name: abc
+    collection_date: '2013-03-25T12:42:31+01:00'
+    env_broad_scale: unicorn [example:999]
+    env_local_scale: unicorn [example:999]
+    env_medium: unicorn [example:999]
+    geo_loc_name: "unicorn: unicorn, unicorn"
+    lat_lon: 45.67 45.67
+    samp_taxon_id: unicorn [NCBITaxon:999]
+    seq_meth: xxx
