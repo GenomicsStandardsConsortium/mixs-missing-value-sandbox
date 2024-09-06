@@ -22,7 +22,7 @@ SRC = src
 DEST = project
 PYMODEL = $(SRC)/$(SCHEMA_NAME)/datamodel
 DOCDIR = docs
-EXAMPLEDIR = examples
+#EXAMPLEDIR = examples
 SHEET_MODULE = personinfo_enums
 SHEET_ID = $(LINKML_SCHEMA_GOOGLE_SHEET_ID)
 SHEET_TABS = $(LINKML_SCHEMA_GOOGLE_SHEET_TABS)
@@ -54,8 +54,9 @@ GEN_TS_ARGS = ${LINKML_GENERATORS_TYPESCRIPT_ARGS}
 endif
 
 
+# removed target gen-examples
 # basename of a YAML file in model/
-.PHONY: all clean setup gen-project gen-examples gendoc git-init-add git-init git-add git-commit git-status
+.PHONY: all clean setup gen-project gendoc git-init-add git-init git-add git-commit git-status
 
 # note: "help" MUST be the first target in the file,
 # when the user types "make" they should get help info
@@ -76,8 +77,9 @@ status: check-config
 	@echo "Project: $(SCHEMA_NAME)"
 	@echo "Source: $(SOURCE_SCHEMA_PATH)"
 
+# removed target gen-examples
 # generate products and add everything to github
-setup: check-config git-init install gen-project gen-examples gendoc git-add git-commit
+setup: check-config git-init install gen-project gendoc git-add git-commit
 
 # install any dependencies required for building
 install:
@@ -115,9 +117,9 @@ deploy: all mkd-gh-deploy
 compile-sheets:
 	$(RUN) sheets2linkml --gsheet-id $(SHEET_ID) $(SHEET_TABS) > $(SHEET_MODULE_PATH).tmp && mv $(SHEET_MODULE_PATH).tmp $(SHEET_MODULE_PATH)
 
-# In future this will be done by conversion
-gen-examples:
-	cp src/data/examples/* $(EXAMPLEDIR)
+## In future this will be done by conversion
+#gen-examples:
+#	cp src/data/examples/* $(EXAMPLEDIR)
 
 # generates all project files
 
@@ -140,7 +142,8 @@ ifneq ($(strip ${GEN_TS_ARGS}),)
 	$(RUN) gen-typescript ${GEN_TS_ARGS} $(SOURCE_SCHEMA_PATH) >${DEST}/typescript/${SCHEMA_NAME}.ts
 endif
 
-test: test-schema test-python test-examples
+# removed target test-examples
+test: test-schema test-python
 
 test-schema:
 	$(RUN) gen-project ${CONFIG_YAML} -d tmp $(SOURCE_SCHEMA_PATH)
@@ -158,17 +161,17 @@ else
 	$(info Ok)
 endif
 
-convert-examples-to-%:
-	$(patsubst %, $(RUN) linkml-convert  % -s $(SOURCE_SCHEMA_PATH) -C Person, $(shell ${SHELL} find src/data/examples -name "*.yaml"))
+#convert-examples-to-%:
+#	$(patsubst %, $(RUN) linkml-convert  % -s $(SOURCE_SCHEMA_PATH) -C Person, $(shell ${SHELL} find src/data/examples -name "*.yaml"))
 
-examples/%.yaml: src/data/examples/%.yaml
-	$(RUN) linkml-convert -s $(SOURCE_SCHEMA_PATH) -C Person $< -o $@
-examples/%.json: src/data/examples/%.yaml
-	$(RUN) linkml-convert -s $(SOURCE_SCHEMA_PATH) -C Person $< -o $@
-examples/%.ttl: src/data/examples/%.yaml
-	$(RUN) linkml-convert -P EXAMPLE=http://example.org/ -s $(SOURCE_SCHEMA_PATH) -C Person $< -o $@
-
-test-examples: examples/output
+#examples/%.yaml: src/data/examples/%.yaml
+#	$(RUN) linkml-convert -s $(SOURCE_SCHEMA_PATH) -C Person $< -o $@
+#examples/%.json: src/data/examples/%.yaml
+#	$(RUN) linkml-convert -s $(SOURCE_SCHEMA_PATH) -C Person $< -o $@
+#examples/%.ttl: src/data/examples/%.yaml
+#	$(RUN) linkml-convert -P EXAMPLE=http://example.org/ -s $(SOURCE_SCHEMA_PATH) -C Person $< -o $@
+#
+#test-examples: examples/output
 
 examples/output: src/mixs_missing_value_sandbox/schema/mixs_missing_value_sandbox.yaml
 	mkdir -p $@

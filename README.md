@@ -2,8 +2,6 @@
 
 experimentation with formal representations of missing data
 
-This repos starts off with a schema about people. It will be changed to a light subset of MIxS 6.2, with explicit handling of missing values.
-
 ## Website
 
 [https://GenomicsStandardsConsortium.github.io/mixs-missing-value-sandbox](https://GenomicsStandardsConsortium.github.io/mixs-missing-value-sandbox)
@@ -13,11 +11,11 @@ This repos starts off with a schema about people. It will be changed to a light 
 * [examples/](examples/) - example data
 * [project/](project/) - project files (do not edit these)
 * [src/](src/) - source files (edit these)
-  * [mixs_missing_value_sandbox](src/mixs_missing_value_sandbox)
-    * [schema](src/mixs_missing_value_sandbox/schema) -- LinkML schema
-      (edit this)
-    * [datamodel](src/mixs_missing_value_sandbox/datamodel) -- generated
-      Python datamodel
+    * [mixs_missing_value_sandbox](src/mixs_missing_value_sandbox)
+        * [schema](src/mixs_missing_value_sandbox/schema) -- LinkML schema
+          (edit this)
+        * [datamodel](src/mixs_missing_value_sandbox/datamodel) -- generated
+          Python datamodel
 * [tests/](tests/) - Python tests
 
 ## Developer Documentation
@@ -27,6 +25,7 @@ Use the `make` command to generate project artefacts:
 
 * `make all`: make everything
 * `make deploy`: deploys site
+
 </details>
 
 ## Credits
