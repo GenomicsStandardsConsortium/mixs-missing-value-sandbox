@@ -241,6 +241,8 @@
 
       MimsSoil : collection_date
 
+      MimsSoil : conflicting
+
       MimsSoil : crop_rotation
 
       MimsSoil : cur_land_use
@@ -488,6 +490,12 @@
 </tr>
 </thead>
 <tbody>
+<tr>
+<td><a href="../conflicting/">conflicting</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>intentionally set to incompatible states between a Checklist and an Extension</td>
+<td><a href="../Mims/">Mims</a>, <a href="../Soil/">Soil</a></td>
+</tr>
 <tr>
 <td><a href="../adapters/">adapters</a></td>
 <td>0..1 <em>recommended</em> <br/> <a href="../String/">String</a></td>
@@ -1144,6 +1152,19 @@ is_a: Soil
 mixins:
 - Mims
 attributes:
+  conflicting:
+    name: conflicting
+    description: intentionally set to incompatible states between a Checklist and
+      an Extension
+    from_schema: https://w3id.org/GenomicsStandardsConsortium/mixs-missing-value-sandbox
+    rank: 1000
+    alias: conflicting
+    owner: MimsSoil
+    domain_of:
+    - Mims
+    - Soil
+    range: string
+    pattern: ^[a-zA-Z]+$
   adapters:
     name: adapters
     annotations:

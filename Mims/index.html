@@ -239,6 +239,8 @@
 
       Mims : collection_date
 
+      Mims : conflicting
+
       Mims : depth
 
       Mims : elev
@@ -356,6 +358,12 @@
 </tr>
 </thead>
 <tbody>
+<tr>
+<td><a href="../conflicting/">conflicting</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>intentionally set to incompatible states between a Checklist and an Extension</td>
+<td>direct</td>
+</tr>
 <tr>
 <td><a href="../adapters/">adapters</a></td>
 <td>0..1 <em>recommended</em> <br/> <a href="../String/">String</a></td>
@@ -690,6 +698,7 @@ aliases:
 is_a: Checklist
 mixin: true
 slots:
+- conflicting
 - adapters
 - alt
 - annot
@@ -737,6 +746,9 @@ slots:
 - tax_class
 - temp
 slot_usage:
+  conflicting:
+    name: conflicting
+    pattern: ^[a-zA-Z]+$
   adapters:
     name: adapters
     recommended: true
@@ -833,6 +845,9 @@ aliases:
 is_a: Checklist
 mixin: true
 slot_usage:
+  conflicting:
+    name: conflicting
+    pattern: ^[a-zA-Z]+$
   adapters:
     name: adapters
     recommended: true
@@ -915,6 +930,19 @@ slot_usage:
     name: temp
     recommended: true
 attributes:
+  conflicting:
+    name: conflicting
+    description: intentionally set to incompatible states between a Checklist and
+      an Extension
+    from_schema: https://w3id.org/GenomicsStandardsConsortium/mixs-missing-value-sandbox
+    rank: 1000
+    alias: conflicting
+    owner: Mims
+    domain_of:
+    - Mims
+    - Soil
+    range: string
+    pattern: ^[a-zA-Z]+$
   adapters:
     name: adapters
     annotations:

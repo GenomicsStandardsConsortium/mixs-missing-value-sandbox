@@ -243,6 +243,8 @@
 
       Soil : annual_temp
 
+      Soil : conflicting
+
       Soil : crop_rotation
 
       Soil : cur_land_use
@@ -405,6 +407,12 @@
 </tr>
 </thead>
 <tbody>
+<tr>
+<td><a href="../conflicting/">conflicting</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>intentionally set to incompatible states between a Checklist and an Extension</td>
+<td>direct</td>
+</tr>
 <tr>
 <td><a href="../agrochem_addition/">agrochem_addition</a></td>
 <td>* <br/> <a href="../String/">String</a></td>
@@ -835,6 +843,7 @@ aliases:
 - MIxS-soil
 is_a: Extension
 slots:
+- conflicting
 - agrochem_addition
 - al_sat
 - al_sat_meth
@@ -893,6 +902,9 @@ slots:
 - water_cont_soil_meth
 - water_content
 slot_usage:
+  conflicting:
+    name: conflicting
+    pattern: ^[0-9]+$
   crop_rotation:
     name: crop_rotation
     string_serialization: '{boolean};{Rn/start_time/end_time/duration}'
@@ -938,6 +950,9 @@ aliases:
 - MIxS-soil
 is_a: Extension
 slot_usage:
+  conflicting:
+    name: conflicting
+    pattern: ^[0-9]+$
   crop_rotation:
     name: crop_rotation
     string_serialization: '{boolean};{Rn/start_time/end_time/duration}'
@@ -962,6 +977,19 @@ slot_usage:
     name: water_content
     string_serialization: '{float}'
 attributes:
+  conflicting:
+    name: conflicting
+    description: intentionally set to incompatible states between a Checklist and
+      an Extension
+    from_schema: https://w3id.org/GenomicsStandardsConsortium/mixs-missing-value-sandbox
+    rank: 1000
+    alias: conflicting
+    owner: Soil
+    domain_of:
+    - Mims
+    - Soil
+    range: string
+    pattern: ^[0-9]+$
   agrochem_addition:
     name: agrochem_addition
     annotations:
