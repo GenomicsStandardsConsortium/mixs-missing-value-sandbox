@@ -80,6 +80,7 @@ classes:
     is_a: Checklist
     mixin: true
     slots:
+      - conflicting
       - adapters
       - alt
       - annot
@@ -127,6 +128,8 @@ classes:
       - tax_class
       - temp
     slot_usage:
+      conflicting:
+        pattern: ^[a-zA-Z]+$
       adapters:
         recommended: true
       alt:
@@ -193,6 +196,7 @@ classes:
     title: soil
     is_a: Extension
     slots:
+      - conflicting
       - agrochem_addition
       - al_sat
       - al_sat_meth
@@ -251,6 +255,8 @@ classes:
       - water_cont_soil_meth
       - water_content
     slot_usage:
+      conflicting:
+        pattern: ^[0-9]+$
       crop_rotation:
         string_serialization: '{boolean};{Rn/start_time/end_time/duration}'
       depth:
@@ -305,6 +311,9 @@ slots:
     range: Soil
     inlined: true
     inlined_as_list: true
+
+  conflicting:
+    description: intentionally set to incompatible states between a Checklist and an Extension
 
   adapters:
     annotations:
