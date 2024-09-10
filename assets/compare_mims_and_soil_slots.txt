@@ -1,0 +1,155 @@
+conflicting slot's usage in Mims:
+name: conflicting
+pattern: ^[a-zA-Z]+$
+
+conflicting slot's usage in Soil:
+name: conflicting
+pattern: ^[0-9]+$
+
+Induced slot conflicting in MimsSoil
+
+name: conflicting
+description: intentionally set to incompatible states between a Checklist and an Extension
+from_schema: https://w3id.org/GenomicsStandardsConsortium/mixs-missing-value-sandbox
+alias: conflicting
+owner: MimsSoil
+domain_of:
+- Mims
+- Soil
+range: string
+pattern: ^[a-zA-Z]+$
+
+depth slot's usage in Mims:
+name: depth
+examples:
+- value: 10 meter
+recommended: true
+
+depth slot's usage in Soil:
+name: depth
+examples:
+- value: 10 meter
+required: true
+
+Induced slot depth in MimsSoil
+
+name: depth
+annotations:
+  Preferred_unit:
+    tag: Preferred_unit
+    value: meter
+description: The vertical distance below local surface. For sediment or soil samples
+  depth is measured from sediment or soil surface, respectively. Depth can be reported
+  as an interval for subsurface samples
+title: depth
+examples:
+- value: 10 meter
+in_subset:
+- environment
+from_schema: https://w3id.org/GenomicsStandardsConsortium/mixs-missing-value-sandbox
+keywords:
+- depth
+slot_uri: MIXS:0000018
+alias: depth
+owner: MimsSoil
+domain_of:
+- Mims
+- Soil
+range: string
+required: true
+recommended: true
+pattern: ^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)?
+  *([^\s-]{1,2}|[^\s-]+.+[^\s-]+)$
+structured_pattern:
+  syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
+  interpolated: true
+  partial_match: true
+
+elev slot's usage in Mims:
+name: elev
+recommended: true
+
+elev slot's usage in Soil:
+name: elev
+required: true
+
+Induced slot elev in MimsSoil
+
+name: elev
+annotations:
+  Preferred_unit:
+    tag: Preferred_unit
+    value: meter
+description: Elevation of the sampling site is its height above a fixed reference
+  point, most commonly the mean sea level. Elevation is mainly used when referring
+  to points on the earth's surface, while altitude is used for points above the surface,
+  such as an aircraft in flight or a spacecraft in orbit
+title: elevation
+examples:
+- value: 100 meter
+in_subset:
+- environment
+from_schema: https://w3id.org/GenomicsStandardsConsortium/mixs-missing-value-sandbox
+keywords:
+- elevation
+slot_uri: MIXS:0000093
+alias: elev
+owner: MimsSoil
+domain_of:
+- Mims
+- Soil
+range: string
+required: true
+recommended: true
+pattern: ^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)?
+  *([^\s-]{1,2}|[^\s-]+.+[^\s-]+)$
+structured_pattern:
+  syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
+  interpolated: true
+  partial_match: true
+
+project_name not modified by Mims or Soil
+
+----
+samp_name not modified by Mims or Soil
+
+----
+samp_vol_we_dna_ext not modified by Mims or Soil
+
+----
+temp slot's usage in Mims:
+name: temp
+recommended: true
+
+Soil uses the global definition for temp
+Induced slot temp in MimsSoil
+
+name: temp
+annotations:
+  Preferred_unit:
+    tag: Preferred_unit
+    value: degree Celsius
+description: Temperature of the sample at the time of sampling
+title: temperature
+examples:
+- value: 25 degree Celsius
+in_subset:
+- environment
+from_schema: https://w3id.org/GenomicsStandardsConsortium/mixs-missing-value-sandbox
+keywords:
+- temperature
+slot_uri: MIXS:0000113
+alias: temp
+owner: MimsSoil
+domain_of:
+- Mims
+- Soil
+range: string
+recommended: true
+pattern: ^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)?
+  *([^\s-]{1,2}|[^\s-]+.+[^\s-]+)$
+structured_pattern:
+  syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
+  interpolated: true
+  partial_match: true
+
