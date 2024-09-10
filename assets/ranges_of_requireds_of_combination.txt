@@ -1,0 +1,52 @@
+Slot collection_date is required in MimsSoil
+datetime
+----
+Slot depth is required in MimsSoil
+string
+^{scientific_float}( *- *{scientific_float})? *{text}$
+^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *([^\s-]{1,2}|[^\s-]+.+[^\s-]+)$
+----
+Slot elev is required in MimsSoil
+string
+^{scientific_float}( *- *{scientific_float})? *{text}$
+^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *([^\s-]{1,2}|[^\s-]+.+[^\s-]+)$
+----
+Slot env_broad_scale is required in MimsSoil
+string
+^{termLabel} \[{termID}\]$
+^([^\s-]{1,2}|[^\s-]+.+[^\s-]+) \[[a-zA-Z]{2,}:[a-zA-Z0-9]\d+\]$
+----
+Slot env_local_scale is required in MimsSoil
+string
+----
+Slot env_medium is required in MimsSoil
+string
+^{termLabel} \[{termID}\]$
+^([^\s-]{1,2}|[^\s-]+.+[^\s-]+) \[[a-zA-Z]{2,}:[a-zA-Z0-9]\d+\]$
+----
+Slot geo_loc_name is required in MimsSoil
+string
+^{text}: {text}, {text}$
+^([^\s-]{1,2}|[^\s-]+.+[^\s-]+): ([^\s-]{1,2}|[^\s-]+.+[^\s-]+), ([^\s-]{1,2}|[^\s-]+.+[^\s-]+)$
+----
+Slot lat_lon is required in MimsSoil
+string
+^{lat} {lon}$
+^(-?((?:[0-8]?[0-9](?:\.\d{0,8})?)|90)) -?[0-9]+(?:\.[0-9]{0,8})?$|^-?(1[0-7]{1,2})$
+----
+Slot project_name is required in MimsSoil
+string
+----
+Slot samp_name is required in MimsSoil
+string
+----
+Slot samp_taxon_id is required in MimsSoil
+string
+^{text} \[{NCBItaxon_id}\]$
+^([^\s-]{1,2}|[^\s-]+.+[^\s-]+) \[NCBITaxon:\d+\]$
+----
+Slot seq_meth is required in MimsSoil
+string
+^{text}|({termLabel} \[{termID}\])$
+^([^\s-]{1,2}|[^\s-]+.+[^\s-]+)|(([^\s-]{1,2}|[^\s-]+.+[^\s-]+) \[[a-zA-Z]{2,}:[a-zA-Z0-9]\d+\])$
+----
