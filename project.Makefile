@@ -1,13 +1,27 @@
 RUN=poetry run
 
-src/data/valid/MixsCompliantData-001-report.txt: src/data/examples/valid \
+assets/MixsCompliantData-001-report.txt: src/data/examples/valid/MixsCompliantData-001.yaml \
 src/mixs_missing_value_sandbox/schema/mixs_missing_value_sandbox.yaml
 	$(RUN) linkml-validate \
 		--schema $(word 2,$^) \
 		--target-class $(shell echo $(basename $(notdir $(word 1,$^))) | cut -d'-' -f1) \
 		$(word 1,$^) > $@
 
-src/data/valid/MixsCompliantData-001.tsv: src/data/examples/valid \
+assets/MimsSoil-collection_date-absent-report.txt: src/data/examples/invalid/MimsSoil-collection_date-absent.yaml \
+src/mixs_missing_value_sandbox/schema/mixs_missing_value_sandbox.yaml
+	$(RUN) linkml-validate \
+		--schema $(word 2,$^) \
+		--target-class $(shell echo $(basename $(notdir $(word 1,$^))) | cut -d'-' -f1) \
+		$(word 1,$^) > $@
+
+assets/MimsSoil-collection_date-from_enum-report.txt: src/data/examples/valid/MimsSoil-collection_date-from_enum.yaml \
+src/mixs_missing_value_sandbox/schema/mixs_missing_value_sandbox.yaml
+	$(RUN) linkml-validate \
+		--schema $(word 2,$^) \
+		--target-class $(shell echo $(basename $(notdir $(word 1,$^))) | cut -d'-' -f1) \
+		$(word 1,$^) > $@
+
+assets/MixsCompliantData-001.tsv: src/data/examples/valid/MixsCompliantData-001.yaml \
 src/mixs_missing_value_sandbox/schema/mixs_missing_value_sandbox.yaml
 	$(RUN) linkml-convert --schema $(word 2,$^) \
 		--output $@ \
