@@ -1,0 +1,12 @@
+depth: "123"
+elev: "123"
+project_name: abc
+samp_name: abc
+
+env_broad_scale: unicorn [example:999]
+env_local_scale: unicorn [example:999]
+env_medium: unicorn [example:999]
+geo_loc_name: "unicorn: unicorn, unicorn"
+lat_lon: 45.67 45.67
+samp_taxon_id: unicorn [NCBITaxon:999]
+seq_meth: xxx

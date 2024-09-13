@@ -72,6 +72,11 @@ classes:
     mixins:
       - Mims
     class_uri: MIXS:0010007_0016012
+    slot_usage:
+      collection_date:
+        any_of:
+          - range: datetime
+          - range: MixsMissingValueEnum
   Mims:
     description: Metagenome or Environmental
     title: MIMS
@@ -1882,6 +1887,12 @@ slots:
       partial_match: true
 
 enums:
+  MixsMissingValueEnum:
+    permissible_values:
+      missing1: { }
+      missing2: { }
+      missing3: { }
+
   DrainageClassEnum:
     permissible_values:
       excessively drained:
